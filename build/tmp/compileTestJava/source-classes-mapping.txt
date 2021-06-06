@@ -1,2 +1,0 @@
-com/test/springboot/web/HelloControllerTest.java
- com.test.springboot.web.HelloControllerTest
