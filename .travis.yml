@@ -18,9 +18,9 @@ before_install:
 script: "./gradlew clean build"
 
 before_deploy:
-  - zip -r freelec-spring-webservice *
+  - zip -r freelec-spring2-webservice *
   - mkdir -p deploy
-  - mv freelec-spring-webservice.zip deploy/freelec-spring-webservice.zip
+  - mv freelec-spring2-webservice.zip deploy/freelec-spring2-webservice.zip
 
 deploy:
   - provider: s3
@@ -31,6 +31,17 @@ deploy:
     skip_cleanup: true
     acl: private
     local_dir: deploy
+    wait-until-deployed : true
+
+  - provider: codedeploy
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: free-spring-build
+    key: freelec-spring2-webservice.zip
+    bundle_type: zip
+    application: free-spring2-webservice
+    deployment_group: free_spring2-webservice-group
+    egion: ap-northeast-2
     wait-until-deployed : true
 
 # CI 실행 완료 시 메일로 알람
