@@ -12,9 +12,6 @@ cache:
     - '$HOME/.m2/repository'
     - '$HOME/.gradle'
 
-before_install:
-  - chmod +x gradlew
-
 script: "./gradlew clean build"
 
 before_deploy:
@@ -42,7 +39,7 @@ deploy:
     key: freelec-spring2-webservice.zip
     bundle_type: zip
     application: free-spring2-webservice
-    deployment_group: free_spring2-webservice-group
+    deployment_group: free-spring2-webservice-group
     egion: ap-northeast-2
     wait-until-deployed : true
 
