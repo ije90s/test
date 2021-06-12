@@ -48,8 +48,8 @@ deploy:
     bucket: free-spring-build
     key: freelec-spirng2-webservice.zip
     bundle_type: zip
-    application: free-spring-webservice
-    deployment_group: free-spring-webservice-group
+    application: free-spring2-webservice
+    deployment_group: free-spring2-webservice-group
     region: ap-northeast-2
     wait-until-deployed : true
 
