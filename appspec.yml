@@ -44,7 +44,7 @@ deploy:
     access_key_id : $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
     bucket: free-spring-build
-    key: free-spirng2-webservice.zip
+    key: freelec-spirng2-webservice.zip
     bundle_type: zip
     application: free-spring-webservice
     deployment_group: free-spring-webservice-group
