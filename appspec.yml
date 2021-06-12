@@ -25,7 +25,7 @@ before_install:
 script: "./gradlew clean build"
 
 before_deploy:
-  - zip -r freelec-spring-webservice *
+  - zip -r freelec-spring2-webservice *
   - mkdir -p deploy
   - mv freelec-spring2-webservice.zip deploy/freelec-spring-webservice2.zip
 
@@ -41,8 +41,6 @@ deploy:
     wait-until-deployed : true
 
   - provider : codedeploy
-    on:
-      all_branches: true
     access_key_id : $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
     bucket: free-spring-build
