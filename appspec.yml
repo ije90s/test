@@ -39,13 +39,14 @@ deploy:
     acl: private
     local_dir: deploy
     wait-until-deployed : true
+
   - provider : codedeploy
-    on:
-      all_branches: true
     access_key_id : $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
     bucket: free-spring-build
-    key: free-spirng-webservice
+    key: free-spirng2-webservice.zip
+    bundle_type: zip
+    application: free-spring-webservice
     deployment_group: free-spring-webservice-group
     region: ap-northeast-2
     wait-until-deployed : true
